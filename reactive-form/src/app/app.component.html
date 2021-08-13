@@ -1,0 +1,12 @@
+<form class="example-form" [formGroup]="formGroup">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+    <mat-error *ngIf="true">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="false">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
