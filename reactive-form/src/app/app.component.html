@@ -1,12 +1,28 @@
+<h3>Reactive form</h3>
 <form class="example-form" [formGroup]="formGroup">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Email</mat-label>
     <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
-    <mat-error *ngIf="true">
-      Please enter a valid email address
+    <mat-error *ngIf="formGroup.get('email')?.hasError('required')">
+      Email address is required
     </mat-error>
-    <mat-error *ngIf="false">
-      Email is <strong>required</strong>
+    <mat-error *ngIf="(emailError$ | async) as errorMessage">
+      {{ errorMessage }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field formGroupName="dateRange" appearance="fill">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate formControlName="start" placeholder="Start date">
+      <input matEndDate formControlName="end" placeholder="End date">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  
+    <mat-error *ngIf="formGroup.get('dateRange.start')?.hasError('required') || formGroup.get('dateRange.end')?.hasError('required')">A start and end date is required</mat-error>
+    <mat-error *ngIf="(dateRangeError$ | async) as errorMessage">
+      {{ errorMessage }}
     </mat-error>
   </mat-form-field>
 </form>
