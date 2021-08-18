@@ -1,0 +1,8 @@
+ports:
+- port: 4200
+tasks:
+- command: npm run start
+
+vscode:
+  extensions:
+    - ms-vscode.vscode-typescript-tslint-plugin
