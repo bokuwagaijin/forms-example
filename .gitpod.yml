@@ -2,7 +2,7 @@ ports:
 - port: 4200
 tasks:
 - init: npm i
-- command: npm run start
+  command: npm run start
 
 vscode:
   extensions:
