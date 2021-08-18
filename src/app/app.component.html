@@ -1,7 +1,7 @@
 <h3>Reactive form</h3>
 <form class="example-form" [formGroup]="formGroup">
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Email</mat-label>
+    <mat-label>Test change</mat-label>
     <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
     <mat-error *ngIf="formGroup.get('email')?.hasError('required')">
       Email address is required
