@@ -1,7 +1,7 @@
 ports:
 - port: 4200
 tasks:
-- before: RUN echo n | npm install -g --silent @angular/cli
+- before: npm install -g --silent @angular/cli
   init: npm i
   command: npm run start
 
