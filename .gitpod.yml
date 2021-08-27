@@ -1,5 +1,7 @@
 ports:
 - port: 4200
+  onOpen: open-preview
+  
 tasks:
 - init: npm i
   command: npm run start
