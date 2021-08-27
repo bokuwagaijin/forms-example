@@ -1,7 +1,8 @@
 ports:
 - port: 4200
 tasks:
-- init: RUN yes | npm i
+- before: RUN echo n | npm install -g --silent @angular/cli
+  init: npm i
   command: npm run start
 
 vscode:
