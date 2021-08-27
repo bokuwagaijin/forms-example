@@ -3,10 +3,7 @@
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Test change</mat-label>
     <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
-    <mat-error *ngIf="formGroup.get('email')?.hasError('required')">
-      Email address is required
-    </mat-error>
-    <mat-error *ngIf="(emailError$ | async) as errorMessage">
+    <mat-error *ngIf="formGroup.get('email')?.touched && (emailError$ | async) as errorMessage">
       {{ errorMessage }}
     </mat-error>
   </mat-form-field>
